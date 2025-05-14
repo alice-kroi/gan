@@ -160,7 +160,8 @@ for epoch in range(0, epoch_num):  # 将 10000 条数据迭代了两遍
             'losses': (G_loss_save, D_loss_save)
         }, f'checkpoint_epoch{epoch+1}.pth')
  
-x = [epoch + 1 for epoch in range(len(G_loss_save))]
+x = [epoch + 1 for epoch in range(len(G_loss_save)-1)]
+print(len(G_loss_save))
 plt.figure()
 plt.plot(x, G_loss_save, 'r')
 plt.plot(x, D_loss_save, 'b')
